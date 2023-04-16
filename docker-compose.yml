@@ -1,11 +1,24 @@
+version: '3'
 services:
+
   hydra:
-    container_name: hydra
     image: ghcr.io/hydradatabase/hydra:latest
     ports:
-      - 172.17.0.1:6543:5432
+      - 172.17.0.1:5234:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${ADMIN_PASSWORD}
     volumes:
-      - ./volumes/db:/var/lib/postgresql/data
+      - ./hydra/db:/var/lib/postgresql/data
+
+  pgadmin4:
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${ADMIN_PASSWORD}
+      PGADMIN_LISTEN_PORT: 8080
+    ports:
+      - "172.17.0.1:6543:8080"
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json

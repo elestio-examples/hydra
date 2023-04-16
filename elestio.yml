@@ -7,6 +7,12 @@ ports:
     public: true
     path: "/"
     isAuth: false
+    - protocol: "TCP"
+    targetProtocol: "TCP"
+    listeningPort: "15432"
+    targetIP: "172.17.0.1"
+    targetPort: "5234"
+    public: true
 environments:
   - key: "ADMIN_PASSWORD"
     value: "random_password"
@@ -33,5 +39,5 @@ lifeCycleConfig:
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "Hydra Admin"
-    login: "admin"
+    login: "[ADMIN_EMAIL]"
     password: "[ADMIN_PASSWORD]"

@@ -13,5 +13,5 @@ Deploy Hydra server with CI/CD on Elestio
 You can can open Hydra UI here:
 
     URL: https://[CI_CD_DOMAIN]
-    login: admin
+    login: [ADMIN_EMAIL]
     password: [ADMIN_PASSWORD]
