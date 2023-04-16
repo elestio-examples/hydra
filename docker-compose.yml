@@ -1,0 +1,11 @@
+services:
+  hydra:
+    container_name: hydra
+    image: ghcr.io/hydradatabase/hydra:latest
+    ports:
+      - 172.17.0.1:6543:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${ADMIN_PASSWORD}
+    volumes:
+      - ./volumes/db:/var/lib/postgresql/data
