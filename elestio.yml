@@ -7,7 +7,7 @@ ports:
     public: true
     path: "/"
     isAuth: false
-    - protocol: "TCP"
+  - protocol: "TCP"
     targetProtocol: "TCP"
     listeningPort: "15432"
     targetIP: "172.17.0.1"
