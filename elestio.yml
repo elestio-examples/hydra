@@ -16,6 +16,8 @@ ports:
 environments:
   - key: "ADMIN_PASSWORD"
     value: "random_password"
+  - key: "SOFTWARE_PASSWORD"
+    value: "random_password"
   - key: "ADMIN_EMAIL"
     value: "[EMAIL]"
 

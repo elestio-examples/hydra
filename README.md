@@ -10,8 +10,19 @@ Deploy Hydra server with CI/CD on Elestio
 
 # Once deployed ...
 
-You can can open Hydra UI here:
+You can open pgAdmin web UI here:
 
-    URL: https://[CI_CD_DOMAIN]
-    login: [ADMIN_EMAIL]
-    password: [ADMIN_PASSWORD]
+    https://[CI_CD_DOMAIN]/
+    Login: [ADMIN_EMAIL] (set in env var)
+    password: [ADMIN_PASSWORD] (set in env var)
+
+You can connect to your server with any Postgres client with those credentials:
+
+    Host: [CI_CD_DOMAIN]
+    Port: 15432
+    Login: postgres
+    Password: [SOFTWARE_PASSWORD] (set in env var)
+
+You can also connect with any PostgreSQL client, including the official CLI:
+
+    PGPASSWORD=[SOFTWARE_PASSWORD] psql --host=[CI_CD_DOMAIN] --port=15432 --username=postgres
