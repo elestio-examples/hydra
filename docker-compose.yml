@@ -6,6 +6,7 @@ services:
     ports:
       - 172.17.0.1:5234:5432
     environment:
+      POSTGRES_DB: hydra
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${ADMIN_PASSWORD}
     volumes:
