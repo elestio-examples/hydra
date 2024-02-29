@@ -1,8 +1,9 @@
 version: "3"
 services:
   hydra:
-    image: ghcr.io/hydradatabase/hydra:latest
+    image: ghcr.io/hydradatabase/hydra:${SOFTWARE_VERSION_TAG}
     ports:
+      #- 15432:5432
       - 172.17.0.1:5234:5432
     environment:
       POSTGRES_DB: hydra
