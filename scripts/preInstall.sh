@@ -3,8 +3,10 @@
 
 mkdir -p ./hydra;
 mkdir -p ./pgadmin;
+mkdir -p ./data;
 chown -R 1001:1001 ./hydra;
 chown -R 1001:1001 ./pgadmin;
+chown -R 1001:1001 ./data;
 
 cat <<EOT > ./servers.json
 {
