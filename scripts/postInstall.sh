@@ -1,6 +1,7 @@
-#set env vars
 set -o allexport; source .env; set +o allexport;
 
-#wait until the server is ready
-echo "Waiting for software to be ready ..."
-sleep 60s;
+docker-compose down
+openssl req -new -x509 -days 3650 -nodes -text -out ./data/server.crt -keyout ./data/server.key -subj "/CN=${CNAME}"
+sleep 5s;
+sed -i 's/#command:/command:/' docker-compose.yml
+docker-compose up -d;
